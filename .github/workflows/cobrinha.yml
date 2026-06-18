@@ -1,0 +1,28 @@
+name: Jogo da Cobrinha
+
+on:
+  schedule:
+    - cron: "0 */12 * * *" # Atualiza sozinho a cada 12 horas
+  workflow_dispatch: # Permite que você clique para rodar manualmente
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Gerar a animação da cobrinha
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          
+      - name: Enviar os arquivos para o repositório
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
