@@ -1,5 +1,11 @@
 ## Aopaa Zafalon aqui!!!! 🤗👊
 <div>
+  <p align="center">
+  <img src="moon-purple.gif">
+</p>
+</div>
+
+<div>
   <a href="https://github.com//github-readme-stats">
   <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=JoaoPZafalon" />
 </a>
