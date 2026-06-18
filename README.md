@@ -15,9 +15,9 @@
 </div>
 <div >
 # 🐍 Minhas Contribuições
-
+  
 ![](https://github.com/JoaoPZafalon)
 <br>
-![Jogo da Cobrinha](https://githubusercontent.com)
 
+![Jogo da Cobrinha](https://githubusercontent.com)
 </div>
