@@ -18,5 +18,6 @@
 
 ![](https://github.com/JoaoPZafalon)
 <br>
-![Jogo da Cobrinha](https://github.com/JoaoPZafalon)
+![Jogo da Cobrinha](https://githubusercontent.com)
+
 </div>
