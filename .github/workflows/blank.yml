@@ -1,24 +1,37 @@
-name: Generate Snake
+name: Jogo da Cobrinha
 
 on:
-  schedule: # executa a cada 12 horas
+  schedule:
+    # Executa automaticamente a cada 12 horas
     - cron: "0 */12 * * *"
+  
+  # Permite que você execute manualmente pela aba Actions
   workflow_dispatch:
 
 jobs:
-  build:
+  generate:
+    permissions: 
+      contents: write
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    
     steps:
-      - uses: actions/checkout@v2
-      
-      - uses: Platane/snk@master
-        id: snake-gif
+      # Passagem 1: Baixa o código do seu repositório
+      - name: Checkout do código
+        uses: actions/checkout@v4
+        
+      # Passagem 2: Gera os arquivos da cobrinha (versão normal e modo escuro)
+      - name: Gerar o jogo da cobrinha
+        uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
-          gif_out_path: dist/github-contribution-grid-snake.gif
-          svg_out_path: dist/github-contribution-grid-snake.svg
-
-      - uses: crazy-max/ghaction-github-pages@v2
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          
+      # Passagem 3: Salva os arquivos gerados na branch "output"
+      - name: Enviar os arquivos para o repositório
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
