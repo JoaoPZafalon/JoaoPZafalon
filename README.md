@@ -18,7 +18,7 @@
 
 # 🐍 Minhas Contribuições
 
-![](http://githubusercontent.com/JoaoPZafalon)
+![](https://github.com/JoaoPZafalon)
 <br>
-![Jogo da Cobrinha](https://githubusercontent.com/JoaoPZafalon)
+![Jogo da Cobrinha](https://github.com/JoaoPZafalon)
 </div>
